@@ -1,4 +1,4 @@
-# Bhoomi Evidence — SIH 26019 Full-Stack IntelliJ MVP
+# Bhoomi Evidence — Land Governance Intelligence
 
 A local-first full-stack prototype for:
 Policy question → evidence → geography → scenario comparison → decision brief.
