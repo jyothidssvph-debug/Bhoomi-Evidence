@@ -1,0 +1,12 @@
+.idea/
+*.iml
+target/
+*.class
+
+# H2 database
+data/
+*.mv.db
+*.trace.db
+
+# Logs
+*.log

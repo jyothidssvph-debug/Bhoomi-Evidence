@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhoomi Evidence — Land Governance Intelligence</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">B</span><div><strong>Bhoomi Evidence</strong><small>Land Governance Intelligence</small></div></div>
+  <div class="status"><span class="dot"></span> Backend connected</div>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <span class="eyebrow">SIH 26019 • POLICY RESEARCH PLATFORM</span>
+    <h1>Turn a policy question into a defensible decision brief.</h1>
+    <p>Evidence synthesis, geography, scenario comparison and provenance in one workflow.</p>
+  </div>
+  <div class="hero-card"><div class="mini-label">WORKFLOW</div><b>Question → Evidence → Geography → Scenarios → Decision</b></div>
+</section>
+
+<section class="question-card">
+  <label>Policy question</label>
+  <div class="question-row">
+    <input id="question" value="How should land-use planning balance urban growth and agricultural protection?">
+    <button onclick="analyze()">Analyze evidence</button>
+  </div>
+</section>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="evidence">01 Evidence</button>
+  <button class="tab" data-tab="geography">02 Geography</button>
+  <button class="tab" data-tab="scenarios">03 Scenarios</button>
+  <button class="tab" data-tab="brief">04 Decision Brief</button>
+</nav>
+
+<section id="evidence" class="panel active">
+  <div class="grid two">
+    <div>
+      <div class="section-head"><div><span class="kicker">EVIDENCE SYNTHESIS</span><h2>What does the evidence suggest?</h2></div><span class="badge">3 sources</span></div>
+      <div class="finding">Land-use planning should compare development pressure with agricultural sensitivity and climate exposure rather than treating expansion as a single-variable decision.</div>
+      <div id="evidence-list" class="cards"></div>
+    </div>
+    <aside class="trust">
+      <span class="kicker">WHY SHOULD I TRUST THIS?</span>
+      <h3>Evidence confidence & provenance</h3>
+      <div class="trust-item"><b>Source</b><span>Stored in the platform evidence repository</span></div>
+      <div class="trust-item"><b>Date</b><span>Each record carries a publication date</span></div>
+      <div class="trust-item"><b>Methodology</b><span>Evidence type and geography are visible</span></div>
+      <div class="trust-item"><b>Strength</b><span>Demo confidence labels are shown per source</span></div>
+      <div class="notice">Demo records are illustrative. Verify sources before policy use.</div>
+    </aside>
+  </div>
+</section>
+
+<section id="geography" class="panel">
+  <div class="section-head"><div><span class="kicker">GEOGRAPHY</span><h2>Compare land-governance signals</h2></div></div>
+  <div class="district-layout">
+    <div id="districts" class="district-list"></div>
+    <div id="district-detail" class="map-card"><div class="map-placeholder"><span>GIS VIEW</span><h3>Select a district</h3><p>Indicators will appear here.</p></div></div>
+  </div>
+</section>
+
+<section id="scenarios" class="panel">
+  <div class="section-head"><div><span class="kicker">POLICY SIMULATION</span><h2>Compare policy scenarios</h2></div></div>
+  <div class="scenario-grid">
+    <div class="controls">
+      <label>Urban growth control <output id="urbanOut">60</output></label>
+      <input id="urban" type="range" min="0" max="100" value="60">
+      <label>Agricultural protection <output id="agriOut">70</output></label>
+      <input id="agri" type="range" min="0" max="100" value="70">
+      <button onclick="runScenario()">Compare scenario</button>
+    </div>
+    <div id="scenario-result" class="result-card"></div>
+  </div>
+</section>
+
+<section id="brief" class="panel">
+  <div class="section-head"><div><span class="kicker">DECISION BRIEF</span><h2>Evidence-backed policy snapshot</h2></div><button class="secondary" onclick="window.print()">Print / Save PDF</button></div>
+  <div class="brief" id="brief-content">
+    <div><span>QUESTION</span><p id="brief-question"></p></div>
+    <div><span>KEY FINDING</span><p>Balance development pressure with agricultural sensitivity and climate exposure using spatially targeted planning.</p></div>
+    <div><span>GEOGRAPHY</span><p id="brief-geo">Select a district in the Geography tab.</p></div>
+    <div><span>SCENARIO</span><p id="brief-scenario">Run a scenario comparison.</p></div>
+    <div><span>DECISION CONSIDERATIONS</span><ul><li>Protect high-sensitivity agricultural areas.</li><li>Target infrastructure where opportunity and resilience align.</li><li>Review assumptions and source provenance before implementation.</li></ul></div>
+  </div>
+</section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
